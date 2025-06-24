@@ -37,6 +37,11 @@ const courses=ref([
     description:"Best course for learning Architecture",
     intake:"May 2026",
   },
+   { names:"Law",
+    school:"School of law",
+    description:"Best course for learning law",
+    intake:"May 2026",
+}
 ])
 </script>
 
@@ -55,7 +60,7 @@ const courses=ref([
           {{course.description}}
         </v-card-text>
         <v-card-text>
-          intake.name
+         {{course.intake}}
         </v-card-text>
       </v-card>
 

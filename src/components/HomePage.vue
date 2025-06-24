@@ -79,16 +79,19 @@
   <v-container>
     <v-row>  
      <v-col cols="12" md="2">
-     <v-image src="../../public/public/images/benjamin-thomas-qDEvPXs9PwY-unsplash.jpg"></v-image>
+     <v-img src="../../public/images/delloitte logo.png"></v-img>
       </v-col>
       <v-col cols="12" md="2">
-     <v-image src="../../public/images/Google-02-01-400x280.png "></v-image>
+     <v-img src="../../public/images/Google-02-01-400x280.png "></v-img>
       </v-col>
       <v-col cols="12" md="2">
-     <v-image src="../../public/images/SAF-MAIN-LOGO-400x280.png"></v-image>
+     <v-img src="../../public/images/SAF-MAIN-LOGO-400x280.png"></v-img>
       </v-col>
       <v-col cols="12" md="2">
-     <v-image src="../../public/images/logo1-Copy-2.png"></v-image>
+     <v-img src="../../public/images/dubai logo.png"></v-img>
+      </v-col>
+      <v-col cols="12" md="2">
+     <v-img src="public/images/events/Booking_Com_Logo.svg"></v-img>
       </v-col>
     </v-row>
   </v-container>
