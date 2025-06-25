@@ -1,33 +1,36 @@
 <script setup>
 import { useCoursesStore } from '../stores/courses'
+import {ref} from 'vue'
 
-const coursesStore= useCoursesStore() 
+const coursesStore = useCoursesStore()
 const courses= coursesStore.courses
 
-//const updateSelectedCourse =courses.find(course => course.id == coursesStore.selectedCourse);
+const selectedCourse = courses.find(course => course.id == coursesStore.selectedCourse);
 
-// models (to  uniquely each text field)
-const firstName=defineModel('firstName')
-const middleName=defineModel('middleName') 
-const lastName=defineModel('lastName')
-const emailAddress=defineModel('emailAddress')
-const phoneNumber=defineModel('phoneNumber')
-const PhysicalAddress=defineModel('physicalAddress')
-const gender=defineModel('gender')
-const dob= defineModel('dob')
-const nationality=defineModel('nationality')
-//object to hold
-const applicationFormDetails= ref({
-  firstName:firstName,
-  middleName:middleName,
-  lastName:lastName,
-  emailAddress:emailAddress,
-  phoneNumber:phoneNumber,
-  physicalAddress:PhysicalAddress,
-  gender:gender,
-  dob:dob,
-  nationality:nationality,
-  courses:selectedCourse
+// models (to uniquely identify each text field)
+const firstName = defineModel('firstName')
+const middleName = defineModel('middleName')
+const lastName = defineModel('lastName')
+const emailAddress = defineModel('emailAddress')
+const phoneNumber = defineModel('phoneNumber')
+const physicalAddress = defineModel('physicalAddress')
+const gender = defineModel('gender')
+const dob = defineModel('dob')
+const nationality = defineModel('nationality')
+
+//object to hold form data
+const applicationFormDetails = ref({
+    firstName:firstName,
+    middleName:middleName,
+    lastName:lastName,
+    emailAddress:emailAddress,
+    phoneNumber:phoneNumber,
+    physicalAddress:physicalAddress,
+    gender:gender,
+    dob:dob,
+    nationality:nationality,
+    course:selectedCourse
+
 })
 //function to save data
 function savedata(){
@@ -39,12 +42,13 @@ function savedata(){
 </script>
 
 <template>
-  <v-container>
-    <v-row>
-      <p> You are applying for
-         , the next intake is in</p>
-    </v-row>
-  </v-container>
+ <v-container>
+        <v-row>
+            <p> You are applying for {{ selectedCourse.name }}, 
+                the next intake is in {{ selectedCourse.intake }}</p>
+        </v-row>
+    </v-container>Add commentMore actions
+
   <!--Apply-->
   <!--first name,middle name,last name-->
   <v-container>
@@ -53,10 +57,10 @@ function savedata(){
           <v-text-field label="First Name" v-model ="firstName"></v-text-field>
       </v-col>
       <v-col md="4">
-          <v-text-field label="First Name"v-model ="middleName" ></v-text-field>
+          <v-text-field label="Middle Name "v-model ="middleName" ></v-text-field>
       </v-col>
       <v-col md="4">
-          <v-text-field label="First Name"v-model ="lastName" ></v-text-field>
+          <v-text-field label="Last Name"v-model ="lastName" ></v-text-field>
       </v-col>
     </v-row>
     <!--email,phone,pysical address-->
@@ -68,7 +72,7 @@ function savedata(){
           <v-text-field label="Phone Number" v-model ="phoneNumber"></v-text-field>
       </v-col>
       <v-col md="4">
-          <v-text-field label="Physical Address" v-model ="PhysicalAddress"></v-text-field>
+          <v-text-field label="Physical Address" v-model ="physicalAddress"></v-text-field>
       </v-col>
     </v-row>
     <!--gender,date of birth,nationality-->
@@ -77,7 +81,7 @@ function savedata(){
           <v-text-field label="Gender" v-model ="gender"></v-text-field>
       </v-col>
       <v-col md="4">
-          <v-text-field label="Date of birth" v-model ="dateofBirth"></v-text-field>
+          <v-text-field label="Date of birth" v-model ="dob"></v-text-field>
       </v-col>
       <v-col md="4">
           <v-text-field label="Nationality"v-model ="nationality" ></v-text-field>
