@@ -47,7 +47,7 @@ function savedata(){
             <p> You are applying for {{ selectedCourse.name }}, 
                 the next intake is in {{ selectedCourse.intake }}</p>
         </v-row>
-    </v-container>Add commentMore actions
+    </v-container>
 
   <!--Apply-->
   <!--first name,middle name,last name-->

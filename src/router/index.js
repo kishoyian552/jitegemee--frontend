@@ -7,7 +7,7 @@ import Events from '../components/Events.vue'
 import HomePage from '../components/HomePage.vue'
 import Library from '../components/Library.vue'
 import LogIn from '../components/LogIn.vue'
-import StudentsLife from '../components/StudentsLIfe.vue'
+import StudentsLife from '../components/StudentLIfe.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
